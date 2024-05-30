@@ -1,0 +1,12 @@
+name: MLflowProject
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      train_path: {type: str}
+      model_param1: {type: int, default: 10}
+    command: "export EMC_ROOT=/EMC /
+              export PATH=$PATH:$EMC_ROOT/bin:$EMC_ROOT/scripts} /
+              python scripts/run_md_pipeline.py --smiles_csv <smiles_csv> --output_folder <output_folder> --   field <force field> --steps <steps> --cores <cores> --emc_template <path to emc_template.esh> --lammps_template <path to lammps_template.in>"
